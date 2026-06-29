@@ -1,70 +1,181 @@
-# Getting Started with Create React App
+# Slapshot Session Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application that transforms raw Slapshot Rebound match JSON files into player statistics, session summaries, and performance analytics.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Slapshot Session Tracker allows users to upload match data exported from Slapshot Rebound and organize that data into playable sessions. Users can select the players they want to track, view aggregate statistics, and discover trends across multiple gaming sessions.
 
-### `npm start`
+The goal of the project is to convert raw match data into meaningful insights through an intuitive dashboard experience.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+### Upload and Create Sessions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Upload one or more match JSON files
+- Parse files in React
+- Create session records
+- Persist sessions using json-server
+- Automatically update application state after upload
 
-### `npm run build`
+### Manage Sessions and Track Players
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- View previously uploaded sessions
+- Review players discovered in each session
+- Select players to track
+- Persist tracked player selections
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Player Analytics Dashboard
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+View aggregate statistics for tracked players, including:
 
-### `npm run eject`
+- Games Played
+- Goals
+- Assists
+- Saves
+- Wins
+- Losses
+- Goals Per Game
+- Saves Per Game
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Generate insights such as:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Highest scoring session
+- Most active player
+- Best win rate
+- Average goals per game
+- Average saves per game
+- Most played teammate
+- Most played opponent
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Routes
 
-## Learn More
+| Route | Description |
+|---------|-------------|
+| `/` | Home dashboard |
+| `/upload` | Upload new session files |
+| `/sessions` | View and manage sessions |
+| `/players` | View tracked player analytics |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Planned Components
 
-### Code Splitting
+- App
+- NavBar
+- Home
+- UploadForm
+- SessionList
+- SessionCard
+- SessionDetails
+- PlayerSelector
+- PlayerList
+- PlayerCard
+- InsightCard
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- React
+- React Router
+- JavaScript
+- CSS
+- json-server
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Backend Structure
 
-### Advanced Configuration
+### Sessions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```json
+{
+  "id": 1,
+  "name": "Friday Night Session",
+  "date": "2026-06-29",
+  "gameCount": 10,
+  "playersFound": [
+    "Midnight Envy",
+    "Player2"
+  ]
+}
+```
 
-### Deployment
+### Players
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```json
+{
+  "id": 1,
+  "name": "Midnight Envy",
+  "gamesPlayed": 42,
+  "goals": 87,
+  "assists": 31,
+  "saves": 55,
+  "wins": 24,
+  "losses": 18
+}
+```
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd slapshot-session-tracker
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Start json-server
+
+```bash
+npx json-server --watch db.json --port 3001
+```
+
+### 4. Start the React Application
+
+```bash
+npm start
+```
+
+### 5. Open the Application
+
+Navigate to:
+
+```txt
+http://localhost:3000
+```
+
+---
+
+## Technical Challenges
+
+- Parsing uploaded JSON files
+- Aggregating player statistics across multiple sessions
+- Managing shared React state
+- Generating player insights from session data
+
+---
+
+## Stretch Goals
+
+- AI-generated coaching insights
+- Historical progression graphs
+- Session comparison tools
+- Team chemistry tracking
+- Exportable player reports
+- Advanced player trend analysis
+- Leaderboard
+  
