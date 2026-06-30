@@ -10,19 +10,27 @@ function PlayerList() {
       .then((playerData) => setPlayers(playerData));
   }, []);
 
+  if (players.length === 0) {
+    return (
+      <section>
+        <h2>Tracked Players</h2>
+        <p>No tracked players saved yet.</p>
+      </section>
+    );
+  }
+
   return (
     <section>
       <h2>Tracked Players</h2>
 
-      {players.length === 0 ? (
-        <p>No tracked players saved yet.</p>
-      ) : (
-        <div>
-          {players.map((player) => (
-            <PlayerCard key={player.id} player={player} />
-          ))}
-        </div>
-      )}
+      <div>
+        {players.map((player) => (
+          <PlayerCard
+            key={player.id}
+            player={player}
+          />
+        ))}
+      </div>
     </section>
   );
 }
