@@ -44,8 +44,74 @@
         "Hockey"
       ],
       "id": "APkKEkp0gvg"
+    },
+    {
+      "name": "Session 1",
+      "date": "2026-06-30",
+      "gameCount": 10,
+      "playersFound": [
+        "rmg",
+        "Midnight Envy",
+        "thecrispierbiscuit",
+        "FLAWDA JIT",
+        "LukakuTriceps",
+        "TypicaL",
+        "TheDarkAssailant",
+        "PM",
+        "Nutterbutter",
+        "vantaulewis",
+        "Juan",
+        "Apollo",
+        "Bez",
+        "Pass_Or_I_Will_Throw",
+        "Flinty",
+        "Logicalboy",
+        "Peaceful (MUTED)",
+        "Coach",
+        "luke_",
+        "Vile",
+        "Dr. Ticklesons",
+        "aerion",
+        "2022 Tim Hardaway Jr.",
+        "Urban Universal",
+        "War Nerve",
+        "Korplix",
+        "ComradeRedPanda",
+        "konechne",
+        "1974 Dodge Challenger",
+        "Triscut™™",
+        "Belevis",
+        "TheMuffinnMann",
+        "FOOLIN",
+        "bandmankenny",
+        "Sasquatch",
+        "von dingle le pringle",
+        "Hockey"
+      ],
+      "id": "3A2UF4DrR0E"
     }
   ],
-  "players": [],
+  "players": [
+    {
+      "name": "Midnight Envy",
+      "tracked": true,
+      "sessionId": "APkKEkp0gvg",
+      "id": "X2wlAPerE2I",
+      "sessionIds": [
+        "APkKEkp0gvg",
+        "3A2UF4DrR0E"
+      ]
+    },
+    {
+      "name": "thecrispierbiscuit",
+      "tracked": true,
+      "sessionId": "APkKEkp0gvg",
+      "id": "TBOheX00EUk",
+      "sessionIds": [
+        "APkKEkp0gvg",
+        "3A2UF4DrR0E"
+      ]
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
