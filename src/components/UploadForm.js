@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_URL } from "../api";
 
 function UploadForm() {
   const [sessionName, setSessionName] = useState("");
@@ -52,7 +53,7 @@ function UploadForm() {
       games: uploadedGames,
     };
 
-    const response = await fetch("http://localhost:3001/sessions", {
+    const response = await fetch(`${API_URL}/sessions`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,8 +62,6 @@ function UploadForm() {
     });
 
     const savedSession = await response.json();
-
-    console.log("Uploaded Games:", uploadedGames);
 
     setMessage(
       `Session created: ${savedSession.gameCount} games and ${savedSession.playersFound.length} players loaded.`
@@ -79,17 +78,21 @@ function UploadForm() {
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="session-name">Session Name</label>
+
           <input
             id="session-name"
             type="text"
             value={sessionName}
             onChange={(event) => setSessionName(event.target.value)}
-            placeholder="June 19 Session"
+            placeholder="June 19 Ranked Grind"
           />
         </div>
 
         <div>
-          <label htmlFor="session-files">Upload Match JSON Files</label>
+          <label htmlFor="session-files">
+            Upload Match JSON Files
+          </label>
+
           <input
             id="session-files"
             type="file"
@@ -99,7 +102,9 @@ function UploadForm() {
           />
         </div>
 
-        <button type="submit">Create Session</button>
+        <button type="submit">
+          Create Session
+        </button>
       </form>
 
       {message && <p>{message}</p>}

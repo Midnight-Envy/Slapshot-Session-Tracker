@@ -1,83 +1,107 @@
 import { useState } from "react";
+import PlayerSelector from "./PlayerSelector";
+import { API_URL } from "../api";
 
-function SessionCard({ session }) {
+function SessionCard({ session, players, setPlayers, onDeleteSession }) {
   const [selectedPlayers, setSelectedPlayers] = useState([]);
+  const [message, setMessage] = useState("");
 
   function handlePlayerToggle(playerName) {
     if (selectedPlayers.includes(playerName)) {
-      setSelectedPlayers(selectedPlayers.filter((name) => name !== playerName));
+      setSelectedPlayers((currentSelectedPlayers) =>
+        currentSelectedPlayers.filter((name) => name !== playerName)
+      );
     } else {
-      setSelectedPlayers([...selectedPlayers, playerName]);
+      setSelectedPlayers((currentSelectedPlayers) => [
+        ...currentSelectedPlayers,
+        playerName,
+      ]);
     }
   }
 
   function handleSavePlayers() {
-    fetch("http://localhost:3001/players")
-      .then((response) => response.json())
-      .then((existingPlayers) => {
-        selectedPlayers.forEach((playerName) => {
-          const existingPlayer = existingPlayers.find(
-            (player) => player.name === playerName
-          );
+    selectedPlayers.forEach((playerName) => {
+      const existingPlayer = players.find(
+        (player) => player.name === playerName
+      );
 
-          if (existingPlayer) {
-            const currentSessionIds = existingPlayer.sessionIds || [];
+      if (existingPlayer) {
+        if (!existingPlayer.sessionIds.includes(session.id)) {
+          const updatedPlayer = {
+            ...existingPlayer,
+            sessionIds: [...existingPlayer.sessionIds, session.id],
+          };
 
-            const alreadyHasSession = currentSessionIds.includes(session.id);
-
-            if (!alreadyHasSession) {
-              fetch(`http://localhost:3001/players/${existingPlayer.id}`, {
-                method: "PATCH",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  sessionIds: [...currentSessionIds, session.id],
-                }),
-              });
-            }
-          } else {
-            fetch("http://localhost:3001/players", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                name: playerName,
-                tracked: true,
-                sessionIds: [session.id],
-              }),
+          fetch(`${API_URL}/players/${existingPlayer.id}`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedPlayer),
+          })
+            .then((resp) => resp.json())
+            .then((updatedPlayerFromServer) => {
+              setPlayers((currentPlayers) =>
+                currentPlayers.map((player) =>
+                  player.id === updatedPlayerFromServer.id
+                    ? updatedPlayerFromServer
+                    : player
+                )
+              );
             });
-          }
-        });
-      });
+        }
+      } else {
+        const newPlayer = {
+          name: playerName,
+          tracked: true,
+          sessionIds: [session.id],
+        };
+
+        fetch(`${API_URL}/players`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newPlayer),
+        })
+          .then((resp) => resp.json())
+          .then((newPlayerFromServer) => {
+            setPlayers((currentPlayers) => [
+              ...currentPlayers,
+              newPlayerFromServer,
+            ]);
+          });
+      }
+    });
+
+    setMessage("Tracked players saved.");
   }
 
   return (
-    <article>
+    <div className="session-card">
       <h3>{session.name}</h3>
-
       <p>Date: {session.date}</p>
-      <p>Games: {session.gameCount}</p>
-      <p>Players Found: {session.playersFound.length}</p>
+      <p>Games Uploaded: {session.gameCount}</p>
 
-      <h4>Select Tracked Players</h4>
+      <h4>Select Players to Track</h4>
 
       {session.playersFound.map((playerName) => (
-        <div key={playerName}>
-          <label>
-            <input
-              type="checkbox"
-              checked={selectedPlayers.includes(playerName)}
-              onChange={() => handlePlayerToggle(playerName)}
-            />
-            {playerName}
-          </label>
-        </div>
+        <PlayerSelector
+          key={playerName}
+          playerName={playerName}
+          selectedPlayers={selectedPlayers}
+          onPlayerToggle={handlePlayerToggle}
+        />
       ))}
 
       <button onClick={handleSavePlayers}>Save Tracked Players</button>
-    </article>
+
+      {message && <p>{message}</p>}
+
+      <button onClick={() => onDeleteSession(session.id)}>
+        Delete Session
+      </button>
+    </div>
   );
 }
 
