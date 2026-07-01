@@ -15,20 +15,22 @@ function PlayerCard({ player, sessions, onDeletePlayer }) {
     <div className="player-card">
       <h3>{player.name}</h3>
 
-      <p>Games Played: {totals.gamesPlayed}</p>
-      <p>Goals: {totals.goals}</p>
-      <p>Assists: {totals.assists}</p>
-      <p>Shots: {totals.shots}</p>
-      <p>Saves: {totals.saves}</p>
-      <p>Blocks: {totals.blocks}</p>
-      <p>Passes: {totals.passes}</p>
-      <p>Wins: {totals.wins}</p>
-      <p>Losses: {totals.losses}</p>
-      <p>Points: {metrics.points}</p>
-      <p>Win Rate: {metrics.winRate}%</p>
-      <p>Goals/Game: {metrics.goalsPerGame}</p>
-      <p>Assists/Game: {metrics.assistsPerGame}</p>
-      <p>Points/Game: {metrics.pointsPerGame}</p>
+      <div className="stat-grid">
+        <p><span>{metrics.points}</span> Points</p>
+        <p><span>{totals.gamesPlayed}</span> Games</p>
+        <p><span>{totals.goals}</span> Goals</p>
+        <p><span>{totals.assists}</span> Assists</p>
+        <p><span>{totals.shots}</span> Shots</p>
+        <p><span>{totals.saves}</span> Saves</p>
+        <p><span>{totals.blocks}</span> Blocks</p>
+        <p><span>{totals.passes}</span> Passes</p>
+        <p><span>{totals.wins}</span> Wins</p>
+        <p><span>{totals.losses}</span> Losses</p>
+        <p><span>{metrics.winRate}%</span> Win Rate</p>
+        <p><span>{metrics.pointsPerGame}</span> Pts/Game</p>
+        <p><span>{metrics.goalsPerGame}</span> Goals/Game</p>
+        <p><span>{metrics.assistsPerGame}</span> Assists/Game</p>
+      </div>
 
       <InsightCard
         totals={totals}
@@ -38,7 +40,9 @@ function PlayerCard({ player, sessions, onDeletePlayer }) {
         winRate={metrics.winRate}
       />
 
-      <button onClick={() => onDeletePlayer(player.id)}>Delete Player</button>
+      <button className="delete-button" onClick={() => onDeletePlayer(player.id)}>
+        Delete Player
+      </button>
     </div>
   );
 }

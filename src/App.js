@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import UploadForm from "./components/UploadForm";
 import SessionList from "./components/SessionList";
 import PlayerList from "./components/PlayerList";
+import "./App.css";
 import "./index.css";
 
 function App() {

@@ -27,19 +27,21 @@ function SessionList() {
   }
 
   return (
-    <div>
+    <section className="page-section">
       <h2>Saved Sessions</h2>
 
-      {sessions.map((session) => (
-        <SessionCard
-          key={session.id}
-          session={session}
-          players={players}
-          setPlayers={setPlayers}
-          onDeleteSession={handleDeleteSession}
-        />
-      ))}
-    </div>
+      <div className="session-list">
+        {sessions.map((session) => (
+          <SessionCard
+            key={session.id}
+            session={session}
+            players={players}
+            setPlayers={setPlayers}
+            onDeleteSession={handleDeleteSession}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
 

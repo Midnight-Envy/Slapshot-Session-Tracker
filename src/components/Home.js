@@ -1,19 +1,39 @@
+import oddshotLogo from "../assets/logo_oddshot.png";
+
 function Home() {
   return (
-    <section>
-      <h2>Welcome to Slapshot Session Tracker</h2>
+    <section className="home-page">
+      <div className="home-card">
+        <h2>Slapshot Session Tracker</h2>
 
-      <p>
-        Upload Slapshot Rebound match JSON files, create saved sessions, track
-        selected players, and review scouting analytics across multiple games.
-      </p>
+        <p className="home-intro">
+          Upload Slapshot Rebound match JSON files, create sessions,
+          track players, and review scouting analytics across
+          multiple games.
+        </p>
 
-      <h3>Current Features</h3>
+        <div className="home-feature-grid">
+          <div>Upload Match Data</div>
+          <div>Create Sessions</div>
+          <div>Track Players</div>
+          <div>Analyze Performance</div>
+        </div>
+      </div>
 
-      <p>Upload match data and create session cards.</p>
-      <p>Select players from each session to track.</p>
-      <p>View player analytics, advanced metrics, and scouting insights.</p>
-      <p>Manage saved sessions and player cards.</p>
+      <div className="oddshot-disclaimer">
+        <img
+          src={oddshotLogo}
+          alt="Oddshot Games"
+          className="oddshot-disclaimer-logo"
+        />
+
+        <p>
+          This site is not endorsed by or affiliated with Oddshot Games.
+          All game content and materials are the property of Oddshot Games.
+          Slapshot Rebound is a registered trademark of Oddshot Games.
+          All rights reserved.
+        </p>
+      </div>
     </section>
   );
 }
