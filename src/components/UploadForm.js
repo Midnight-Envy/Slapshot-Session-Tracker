@@ -49,6 +49,7 @@ function UploadForm() {
       date: new Date().toISOString().split("T")[0],
       gameCount: uploadedGames.length,
       playersFound: uniquePlayerNames,
+      games: uploadedGames,
     };
 
     const response = await fetch("http://localhost:3001/sessions", {
