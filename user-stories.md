@@ -41,34 +41,68 @@ The goal is to transform raw match data into an easy-to-read player tracking das
 
 ---
 
-## Feature 3 - Player Analytics Dashboard
+## Feature 3: Player Analytics Dashboard
 
-**User Story:** As a user, I want to view statistics and performance trends for tracked players so that I can better understand how they perform across multiple sessions.
+### User Story
+
+As a user, I want to view analytics for tracked players so that I can evaluate performance across multiple sessions and identify player strengths.
 
 ### Details
 
-Player cards may display:
+- Aggregate player statistics from uploaded sessions
+- Calculate cumulative performance metrics
+- Display tracked players as analytics cards
+- Calculate advanced metrics including:
+  - Points
+  - Win Rate
+  - Goals Per Game
+  - Assists Per Game
+  - Points Per Game
+- Generate rule-based scouting insights based on player performance
 
-- Games Played
-- Goals
-- Assists
-- Saves
-- Wins
-- Losses
-- Goals Per Game
-- Saves Per Game
+---
 
-The dashboard may also generate insights such as:
+## Feature 4: App Usability and Data Management
 
-- Highest scoring session
-- Most active player
-- Best win rate
-- Average goals per game
-- Average saves per game
-- Most played teammate
-- Most played opponent
+### User Story
 
-Player statistics automatically update when additional sessions are uploaded.
+As a user, I want better upload controls, clearer feedback, and the ability to manage saved data so that the app feels easier to use.
+
+### Details
+
+- Allow users to drag and drop JSON files into the upload form
+- Allow users to select JSON files using the file input
+- Auto-populate the session name with the current date
+- Allow users to edit the session name before submitting
+- Display clear feedback after saving tracked players
+- Display games played on player cards instead of sessions tracked
+- Hide internal tracked-player status from the user interface
+- Allow users to delete saved session cards
+- Allow users to delete saved player cards
+
+---
+
+## Feature 5: Dashboard UI and Styling
+
+### User Story
+
+As a user, I want a visually organized dashboard so that I can quickly review sessions, evaluate player performance, and navigate the application efficiently.
+
+### Details
+
+- Style session cards for improved readability
+- Style player analytics cards for clear presentation of statistics
+- Organize player metrics into logical sections
+- Highlight key performance indicators such as:
+  - Points
+  - Win Rate
+  - Goals Per Game
+  - Points Per Game
+- Create a consistent visual design across all pages
+- Improve spacing, alignment, and typography throughout the application
+- Enhance navigation visibility and usability
+- Ensure the dashboard remains easy to read when displaying multiple sessions and players
+- Create a professional scouting dashboard appearance suitable for demonstrating analytics data
 
 ---
 
