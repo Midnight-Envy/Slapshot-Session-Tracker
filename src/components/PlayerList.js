@@ -3,11 +3,16 @@ import PlayerCard from "./PlayerCard";
 
 function PlayerList() {
   const [players, setPlayers] = useState([]);
+  const [sessions, setSessions] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3001/players")
       .then((response) => response.json())
       .then((playerData) => setPlayers(playerData));
+
+    fetch("http://localhost:3001/sessions")
+      .then((response) => response.json())
+      .then((sessionData) => setSessions(sessionData));
   }, []);
 
   if (players.length === 0) {
@@ -28,6 +33,7 @@ function PlayerList() {
           <PlayerCard
             key={player.id}
             player={player}
+            sessions={sessions}
           />
         ))}
       </div>
