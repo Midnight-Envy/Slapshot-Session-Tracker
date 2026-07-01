@@ -66,17 +66,18 @@ As a user, I want to view analytics for tracked players so that I can evaluate p
 
 ### User Story
 
-As a user, I want better upload controls, clearer feedback, and the ability to manage saved data so that the app feels easier and safer to use.
+As a user, I want clearer feedback and the ability to manage saved data so that the app feels easier
 
-### Acceptance Criteria
+### Details
 
-- Allow users to drag and drop JSON files into the upload form
-- Allow users to select JSON files using the file input
+~~- Allow users to drag and drop JSON files into the upload form~~
 - Display clear feedback after saving tracked players
 - Display games played on player cards instead of sessions tracked
 - Hide internal tracked-player status from the user interface
 - Allow users to delete saved session cards
 - Allow users to delete saved player cards
+- Refactor player selection into a reusable PlayerSelector component
+- Refactor scouting insights into a reusable InsightCard component
 
 ---
 
