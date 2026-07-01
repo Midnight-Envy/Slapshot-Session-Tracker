@@ -1,43 +1,44 @@
 import { useEffect, useState } from "react";
 import PlayerCard from "./PlayerCard";
+import { API_URL } from "../api";
 
 function PlayerList() {
   const [players, setPlayers] = useState([]);
   const [sessions, setSessions] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/players")
-      .then((response) => response.json())
-      .then((playerData) => setPlayers(playerData));
+    fetch(`${API_URL}/players`)
+      .then((resp) => resp.json())
+      .then((playersData) => setPlayers(playersData));
 
-    fetch("http://localhost:3001/sessions")
-      .then((response) => response.json())
-      .then((sessionData) => setSessions(sessionData));
+    fetch(`${API_URL}/sessions`)
+      .then((resp) => resp.json())
+      .then((sessionsData) => setSessions(sessionsData));
   }, []);
 
-  if (players.length === 0) {
-    return (
-      <section>
-        <h2>Tracked Players</h2>
-        <p>No tracked players saved yet.</p>
-      </section>
-    );
+  function handleDeletePlayer(playerId) {
+    fetch(`${API_URL}/players/${playerId}`, {
+      method: "DELETE",
+    }).then(() => {
+      setPlayers((currentPlayers) =>
+        currentPlayers.filter((player) => player.id !== playerId)
+      );
+    });
   }
 
   return (
-    <section>
+    <div>
       <h2>Tracked Players</h2>
 
-      <div>
-        {players.map((player) => (
-          <PlayerCard
-            key={player.id}
-            player={player}
-            sessions={sessions}
-          />
-        ))}
-      </div>
-    </section>
+      {players.map((player) => (
+        <PlayerCard
+          key={player.id}
+          player={player}
+          sessions={sessions}
+          onDeletePlayer={handleDeletePlayer}
+        />
+      ))}
+    </div>
   );
 }
 
