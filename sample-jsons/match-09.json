@@ -1,0 +1,149 @@
+{
+    "type": "report_stats",
+    "arena": "Slap Stadium",
+    "score": {
+        "away": 2,
+        "home": 7
+    },
+    "winner": "home",
+    "players": [
+        {
+            "team": "home",
+            "stats": {
+                "wins": 1,
+                "goals": 1,
+                "saves": 2,
+                "score": 210,
+                "shots": 1,
+                "passes": 2,
+                "turnovers": 1,
+                "faceoffs_won": 1,
+                "games_played": 1,
+                "faceoffs_lost": 1,
+                "conceded_goals": 2,
+                "periods_played": 1,
+                "has_mercy_ruled": 1,
+                "contributed_goals": 7
+            },
+            "username": "aCosmicOwl",
+            "game_user_id": "1599589"
+        },
+        {
+            "team": "home",
+            "stats": {
+                "wins": 1,
+                "score": 360,
+                "blocks": 3,
+                "passes": 1,
+                "assists": 4,
+                "takeaways": 1,
+                "turnovers": 1,
+                "faceoffs_won": 2,
+                "games_played": 1,
+                "faceoffs_lost": 1,
+                "conceded_goals": 2,
+                "periods_played": 1,
+                "has_mercy_ruled": 1,
+                "primary_assists": 4,
+                "contributed_goals": 7,
+                "possession_time_sec": 21
+            },
+            "username": "PercDefender",
+            "game_user_id": "1515557"
+        },
+        {
+            "team": "home",
+            "stats": {
+                "wins": 1,
+                "goals": 6,
+                "score": 805,
+                "shots": 6,
+                "blocks": 1,
+                "passes": 3,
+                "post_hits": 1,
+                "turnovers": 1,
+                "faceoffs_won": 3,
+                "games_played": 1,
+                "faceoffs_lost": 1,
+                "conceded_goals": 2,
+                "periods_played": 1,
+                "has_mercy_ruled": 1,
+                "contributed_goals": 7,
+                "game_winning_goals": 1,
+                "possession_time_sec": 8
+            },
+            "username": "Fentanyl Tester",
+            "game_user_id": "1703602"
+        },
+        {
+            "team": "away",
+            "stats": {
+                "score": 10,
+                "blocks": 1,
+                "losses": 1,
+                "passes": 4,
+                "post_hits": 1,
+                "games_played": 1,
+                "faceoffs_lost": 1,
+                "conceded_goals": 7,
+                "periods_played": 1,
+                "was_mercy_ruled": 1,
+                "contributed_goals": 2,
+                "possession_time_sec": 1
+            },
+            "username": "thecrispierbiscuit",
+            "game_user_id": "1055117"
+        },
+        {
+            "team": "away",
+            "stats": {
+                "goals": 1,
+                "score": 315,
+                "shots": 3,
+                "blocks": 2,
+                "losses": 1,
+                "passes": 6,
+                "assists": 1,
+                "post_hits": 1,
+                "takeaways": 3,
+                "turnovers": 1,
+                "faceoffs_won": 3,
+                "games_played": 1,
+                "faceoffs_lost": 2,
+                "conceded_goals": 7,
+                "periods_played": 1,
+                "primary_assists": 1,
+                "was_mercy_ruled": 1,
+                "contributed_goals": 2,
+                "possession_time_sec": 12
+            },
+            "username": "Midnight Envy",
+            "game_user_id": "1097441"
+        },
+        {
+            "team": "away",
+            "stats": {
+                "goals": 1,
+                "score": 125,
+                "shots": 1,
+                "losses": 1,
+                "passes": 4,
+                "games_played": 1,
+                "faceoffs_lost": 3,
+                "conceded_goals": 7,
+                "periods_played": 1,
+                "was_mercy_ruled": 1,
+                "contributed_goals": 2,
+                "possession_time_sec": 2
+            },
+            "username": "m3rkpapi",
+            "game_user_id": "1055242"
+        }
+    ],
+    "match_id": "152acc28-8977-4bb1-9a30-a190025b8056",
+    "end_reason": "MercyRule",
+    "match_length": "300",
+    "current_period": "0",
+    "periods_enabled": "False",
+    "custom_mercy_rule": "0"
+}
