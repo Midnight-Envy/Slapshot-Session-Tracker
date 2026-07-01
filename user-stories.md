@@ -70,7 +70,6 @@ As a user, I want clearer feedback and the ability to manage saved data so that 
 
 ### Details
 
-- ~~Allow users to drag and drop JSON files into the upload form~~
 - Display clear feedback after saving tracked players
 - Display games played on player cards instead of sessions tracked
 - Hide internal tracked-player status from the user interface
