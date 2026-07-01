@@ -158,6 +158,53 @@ Navigate to:
 http://localhost:3000
 ```
 
+### 6. Load Sample Match Files (Optional)
+
+Sample Slapshot Rebound match JSON files are included for testing and demonstration purposes.
+
+Navigate to:
+
+```txt
+sample-jsons/
+```
+
+These files can be used to quickly test the application without needing to generate your own game exports.
+
+#### Testing Workflow
+
+1. Open the Upload page.
+
+2. Enter a session name.
+
+Example:
+
+```txt
+June Test Session
+```
+
+3. Click **Choose Files**.
+
+4. Select one or more JSON files from the `sample-jsons` folder.
+
+5. Click **Create Session**.
+
+6. Navigate to the **Sessions** page.
+
+7. Select the players you wish to track.
+
+8. Click **Save Tracked Players**.
+
+9. Navigate to the **Players** page to view generated player statistics and scouting insights.
+
+#### Recommended Test
+
+For the best demonstration of the application:
+
+- Upload 5–15 sample JSON files at once
+- Create a single session
+- Track multiple players
+- Review the generated analytics dashboard
+
 ---
 
 ## Technical Challenges
