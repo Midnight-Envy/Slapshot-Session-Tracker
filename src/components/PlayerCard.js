@@ -1,4 +1,5 @@
 import InsightCard from "./InsightCard";
+import PlayerRadarChart from "./PlayerRadarChart";
 
 import {
   getPlayerGames,
@@ -31,6 +32,8 @@ function PlayerCard({ player, sessions, onDeletePlayer }) {
         <p><span>{metrics.goalsPerGame}</span> Goals/Game</p>
         <p><span>{metrics.assistsPerGame}</span> Assists/Game</p>
       </div>
+
+      <PlayerRadarChart totals={totals} metrics={metrics} />
 
       <InsightCard
         totals={totals}
