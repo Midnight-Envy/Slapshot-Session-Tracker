@@ -27,18 +27,20 @@ function PlayerList() {
   }
 
   return (
-    <div>
-      <h2>Tracked Players</h2>
+    <section className="page-section">
+      <h2>Players</h2>
 
-      {players.map((player) => (
-        <PlayerCard
-          key={player.id}
-          player={player}
-          sessions={sessions}
-          onDeletePlayer={handleDeletePlayer}
-        />
-      ))}
-    </div>
+      <div className="player-list">
+        {players.map((player) => (
+          <PlayerCard
+            key={player.id}
+            player={player}
+            sessions={sessions}
+            onDeletePlayer={handleDeletePlayer}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
 

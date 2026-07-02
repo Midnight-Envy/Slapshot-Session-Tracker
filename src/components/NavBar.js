@@ -1,9 +1,16 @@
 import { NavLink } from "react-router-dom";
+import slapshotLogo from "../assets/logo_slapshot.png";
 
 function NavBar() {
   return (
     <nav className="navbar">
-      <h1>Slapshot Session Tracker</h1>
+      <div className="nav-brand">
+        <div className="nav-logo-box">
+          <img src={slapshotLogo} alt="Slapshot" className="nav-logo" />
+        </div>
+
+        <h1>Session Tracker</h1>
+      </div>
 
       <div className="nav-links">
         <NavLink to="/">Home</NavLink>
