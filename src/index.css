@@ -218,40 +218,42 @@ button:hover {
 
 .player-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 20px;
   max-height: 72vh;
   overflow-y: auto;
   padding-right: 10px;
 }
 
 .player-card {
-  min-height: 650px;
-  max-height: 700px;
+  min-height: 560px;
+  max-height: 620px;
   overflow-y: auto;
   background: rgba(47, 125, 184, 0.92);
   border-radius: 10px;
-  padding: 20px;
+  padding: 16px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 }
 
 .player-card h3 {
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
 }
 
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 8px;
 }
 
 .stat-grid p {
   margin: 0;
-  padding: 12px;
+  padding: 10px;
   background: rgba(255, 255, 255, 0.14);
   border-radius: 8px;
   font-weight: 800;
+  font-size: 0.95rem;
 }
 
 .stat-grid span {
@@ -260,8 +262,8 @@ button:hover {
 }
 
 .insight-card {
-  margin-top: 18px;
-  padding: 16px;
+  margin-top: 12px;
+  padding: 12px;
   background: rgba(0, 0, 0, 0.16);
   border-radius: 8px;
 }
@@ -365,4 +367,21 @@ button:hover {
 
 .oddshot-disclaimer p {
   margin: 0;
+}
+
+.radar-card {
+  margin-top: 12px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+}
+
+.radar-card h4 {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.radar-chart-wrapper {
+  height: 320px;
 }
